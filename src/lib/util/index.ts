@@ -15,3 +15,4 @@ export * from './store.js';
 
 export * from './markdown/index.js';
 export * from './sanitize/index.js';
+export * from './password/index.js';

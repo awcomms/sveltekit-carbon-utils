@@ -4,7 +4,7 @@
 		header_href: string = '/';
 	import { Content, Grid, Theme } from 'carbon-components-svelte';
 	import 'carbon-components-svelte/css/all.css';
-	import Header from '$lib/components/Nav/Header.svelte';
+	import Header from '$lib/components/Nav/Header/Header.svelte';
 	import SideNav from '$lib/components/Nav/SideNav.svelte';
 	import Notifications from '$lib/components/Notification/Notifications.svelte';
 	import { theme } from '$lib/util/theme_store.js';

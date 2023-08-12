@@ -34,7 +34,8 @@ export type ResultSearchDocument = Document<{name: string}> & {selected: boolean
 
 export type V = number[];
 
-export type { SearchResponse } from './SearchResponse.js';
+export * from './SearchResponse.js';
+export * from './filter.js'
 // export type {
 // 	Post,
 // 	UserPayment,

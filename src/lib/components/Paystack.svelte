@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { PUBLIC_PAYSTACK_PK_LIVE, PUBLIC_PAYSTACK_PK_TEST, PUBLIC_PAYSTACK_TEST } from '$env/static/public';
 	interface Args {
 		email: string;
-		key: string;
 		amount: number;
-		metadata: unknown;
+		metadata?: unknown;
 		currency: 'NGN' | 'GHS' | 'ZAR' | 'USD';
 	}
 
@@ -12,10 +12,10 @@
 
 	const dispatch = createEventDispatcher();
 
-	export const request_payment = ({ email, key, amount, metadata, currency }: Args) => {
+	export const request_payment = ({ email, amount, metadata, currency }: Args) => {
 		PaystackPop.setup({
 			//TODO-window_type
-			key,
+			key: PUBLIC_PAYSTACK_TEST ? PUBLIC_PAYSTACK_PK_TEST : PUBLIC_PAYSTACK_PK_LIVE,
 			email,
 			metadata,
 			currency,
