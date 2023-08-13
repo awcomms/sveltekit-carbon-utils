@@ -15,6 +15,9 @@
 <Theme theme={$theme} />
 <Header {platformName} {company} href={header_href}>
 	<slot name='header' />
+	<svelte:fragment slot='header-utilities'>
+		<slot name='header-utilities' />
+	</svelte:fragment>
 </Header>
 <Content style="background: none; padding: 1rem; height: 100%">
 	<slot name='content' />
