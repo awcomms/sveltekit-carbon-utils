@@ -11,11 +11,11 @@
 	<HeaderPanelLinks>
 		<slot name="panel-links" />
 		{#if identifier}
-			<HeaderPanelLink on:click={() => dispatch('log out')}
+			<HeaderPanelLink on:click={() => dispatch('log_out')}
 				>Log out: {identifier}</HeaderPanelLink
 			>
 		{:else}
-			<HeaderPanelLink on:click={() => dispatch('log in')}>Log in</HeaderPanelLink>
+			<HeaderPanelLink on:click={() => dispatch('log_in')}>Log in</HeaderPanelLink>
 		{/if}
 	</HeaderPanelLinks>
 </HeaderAction>
