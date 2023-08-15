@@ -1,5 +1,5 @@
 <script lang="ts">
-	$: icon = $theme === 'g100' ? Sun : Moon;
+	$: icon = $theme === 'g100' ? Moon : Sun;
 
 	import { HeaderGlobalAction } from 'carbon-components-svelte';
 	import Sun from 'carbon-icons-svelte/lib/Sun.svelte';

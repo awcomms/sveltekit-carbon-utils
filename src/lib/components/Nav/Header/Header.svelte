@@ -23,7 +23,7 @@
 	<svelte:fragment slot="skip-to-content">
 		<SkipToContent />
 	</svelte:fragment>
-	<slot />
+	<slot name="header" />
 	<HeaderUtilities>
 		<slot name="header-utilities" />
 	</HeaderUtilities>
