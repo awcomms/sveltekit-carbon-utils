@@ -14,8 +14,8 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
-		"push_and_publish": "git add .; git commit -m "."; git push; npm publish"
+		"test:unit": "vitest",
+		"push_and_publish": "git add .; git commit -m \".\"; git push; npm publish"
 	},
 	"exports": {
 		".": {
