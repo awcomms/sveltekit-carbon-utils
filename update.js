@@ -18,7 +18,8 @@ pj.version = inc(pj.version, mode);
 writeFileSync(pj_path, JSON.stringify(pj));
 
 const execs = (commands) => {
-	for (let i = commands.length; i > -1; i--) {
+	for (let i = 0; i < commands.length; i++) {
+		console.log(commands[i])
 		exec(commands[i], (err, stdout, stderr) => {
 			console.log('std_out: ', stdout);
 			console.log('stderr: ', stderr);
