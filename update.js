@@ -3,7 +3,6 @@ import { readFileSync, writeFileSync } from 'fs';
 import { inc } from 'semver';
 
 let mode = process.argv[2];
-console.log(process.argv)
 if (mode !== ('patch' || 'major' || 'minor')) {
 	console.error('invalid mode: ', mode);
 	process.abort(1);
@@ -19,7 +18,7 @@ pj.version = inc(pj.version, mode);
 writeFileSync(pj_path, JSON.stringify(pj));
 
 const execs = (commands) => {
-	for (let i = commands.length - 1; i > -1; i--) {
+	for (let i = commands.length; i > -1; i--) {
 		exec(commands[i], (err, stdout, stderr) => {
 			console.log('std_out: ', stdout);
 			console.log('stderr: ', stderr);
