@@ -24,7 +24,8 @@ const execs = (commands) => {
 			console.log('std_out: ', stdout);
 			console.log('stderr: ', stderr);
 			if (err) {
-				throw err;
+				console.error(err)
+				process.abort(1)
 			}
 		});
 	}
