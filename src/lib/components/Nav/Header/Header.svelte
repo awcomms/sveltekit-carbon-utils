@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let platformName: string, company: string, href: string;
+	export let platformName: string, company: string, href: string, persistentHamburgerMenu: boolean;
 	import { navigating, page } from '$app/stores';
 	import { isSideNavOpen } from '$lib/components/Nav/store.js';
 	import {
@@ -11,7 +11,7 @@
 </script>
 
 <Header
-	persistentHamburgerMenu={true}
+	{persistentHamburgerMenu}
 	{platformName}
 	{company}
 	bind:isSideNavOpen={$isSideNavOpen}
