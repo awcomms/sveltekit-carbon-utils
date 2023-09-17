@@ -28,6 +28,13 @@ export class EscapedEmail {
 	}
 }
 
+export interface HeaderProps {
+	platformName: string;
+	company: string;
+	href: string;
+	persistentHamburgerMenu: boolean;
+}
+
 export interface Church { id: RedisKey, name: string }
 
 export type ResultSearchDocument = Document<{name: string}> & {selected: boolean}
