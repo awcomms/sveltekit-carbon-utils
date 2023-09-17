@@ -36,6 +36,9 @@ export const notify = (
 			...ns,
 			n
 		]);
+		setTimeout(() => {
+			notifications.update((ns) => ns.filter(nf => nf !== n ))
+		}, n.timeout);
 	}
 };
 

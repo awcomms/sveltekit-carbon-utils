@@ -1,5 +1,5 @@
 <script lang='ts'>
-    export let identifier: string
+    export let identifier: string | undefined = undefined
     import {HeaderAction, HeaderPanelLinks, HeaderPanelLink} from 'carbon-components-svelte'
     import UserAvatarFilledAlt from 'carbon-icons-svelte/lib/UserAvatarFilledAlt.svelte'
     import {createEventDispatcher} from 'svelte'
