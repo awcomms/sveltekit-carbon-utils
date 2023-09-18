@@ -6,14 +6,14 @@
 	import SideNav from '$lib/components/Nav/SideNav.svelte';
 	import Notifications from '$lib/components/Notification/Notifications.svelte';
 	import { theme } from '$lib/util/theme_store.js';
-	import type { HeaderProps } from '$lib/types/index.js';
+	import type { HeaderProps } from 'carbon-components-svelte/types/UIShell/Header.svelte.js';
 </script>
 
 <Notifications />
 
 <Theme theme={$theme} />
 {#if header_props}
-	<Header {...header_props}>
+	<Header props={header_props}>
 		<slot name='header' />
 		<svelte:fragment slot='header-utilities'>
 			<slot name='header-utilities' />

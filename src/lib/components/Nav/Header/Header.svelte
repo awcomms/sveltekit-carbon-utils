@@ -1,21 +1,14 @@
 <script lang="ts">
-	export let platformName: string, company: string, href: string, persistentHamburgerMenu: boolean;
+	export let props: HeaderProps
 	import { navigating, page } from '$app/stores';
 	import { isSideNavOpen } from '$lib/components/Nav/store.js';
-	import {
-		InlineLoading,
-		SkipToContent,
-		Header,
-		HeaderUtilities,
-	} from 'carbon-components-svelte';
+	import { InlineLoading, SkipToContent, Header, HeaderUtilities } from 'carbon-components-svelte';
+	import type { HeaderProps } from 'carbon-components-svelte/types/UIShell/Header.svelte.js';
 </script>
 
 <Header
-	{persistentHamburgerMenu}
-	{platformName}
-	{company}
+	{...props}
 	bind:isSideNavOpen={$isSideNavOpen}
-	{href}
 >
 	{#if $navigating}
 		<InlineLoading />
@@ -28,5 +21,3 @@
 		<slot name="header-utilities" />
 	</HeaderUtilities>
 </Header>
-
-
