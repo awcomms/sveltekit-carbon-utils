@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
-	import { navigating, page } from '$app/stores';
+	import { page } from '$app/stores';
 </script>
 
 {#if $page.data.github_repo}

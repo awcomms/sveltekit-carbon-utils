@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { TextInput, Button, InlineLoading, TextArea } from 'carbon-components-svelte';
+	import { Button, InlineLoading, TextArea } from 'carbon-components-svelte';
 	import Search from 'carbon-icons-svelte/lib/Search.svelte';
-	import type { SearchDocument } from '$lib/types';
+	import type { SearchDocument } from '$lib/types.js';
 	import axios from 'axios';
-	import { notify } from '$lib/util/notify';
+	import { notify } from 'sveltekit-carbon-utils';
 	import OnEnter from '$lib/components/OnEnter.svelte';
 	import { onMount } from 'svelte';
-	import type { Filters as _Filters } from '$lib/types/filter';
 	import SearchPagination from './SearchPagination.svelte';
 
 	export let searched = false,
@@ -15,6 +14,7 @@
 		id_route: string,
 		placeholder: string,
 		total: number = 0,
+		items_per_page = 7,
 		documents: SearchDocument[] = [],
 		loading = false,
 		page: number = 1;
@@ -38,7 +38,7 @@
 			searched = true;
 		} catch (e: any) {
 			notify({
-				title: `User search error`,
+				title: `Search error`,
 				subtitle: e.response.data.message ?? undefined,
 				kind: 'error'
 			});
@@ -65,6 +65,7 @@
 {#if searched}
 	{#if documents.length}
 		<SearchPagination
+			{items_per_page}
 			route={id_route}
 			{total}
 			on:update={({ detail }) => {
