@@ -1,7 +1,6 @@
 import { marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
 import katex from 'marked-katex-extension';
-import bidi from 'marked-bidi';
 // import extended_tables from 'marked-extended-tables';
 import { mangle } from 'marked-mangle';
 import linkify_it from 'marked-linkify-it';
@@ -26,7 +25,6 @@ export const extensions = [
 	}),
 	linkify_it({}, {}),
 	mangle(),
-	bidi()
 ];
 
 export const to_html = (text: string): string => {

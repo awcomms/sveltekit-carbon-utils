@@ -12,20 +12,18 @@
 <Notifications />
 
 <Theme theme={$theme} />
-{#if header_props}
-	<Header props={header_props}>
-		<slot name='header' />
-		<svelte:fragment slot='header-utilities'>
-			<slot name='header-utilities' />
-		</svelte:fragment>
-	</Header>
-{/if}
+<Header props={header_props}>
+	<slot name="header" />
+	<svelte:fragment slot="header-utilities">
+		<slot name="header-utilities" />
+	</svelte:fragment>
+</Header>
 <Content style="background: none; padding: 1rem; height: 100%">
-	<slot name='content' />
+	<slot name="content" />
 	<SideNav>
-		<slot name='sidenav' />
+		<slot name="sidenav" />
 	</SideNav>
 	<Grid>
-		<slot name='content-grid' />
+		<slot name="content-grid" />
 	</Grid>
 </Content>

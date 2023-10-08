@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let props: HeaderProps
+	export let props: HeaderProps = {}
 	import { navigating, page } from '$app/stores';
 	import { isSideNavOpen } from '$lib/components/Nav/store.js';
 	import { InlineLoading, SkipToContent, Header, HeaderUtilities } from 'carbon-components-svelte';

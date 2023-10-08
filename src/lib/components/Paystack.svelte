@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_PAYSTACK_PK_LIVE, PUBLIC_PAYSTACK_PK_TEST, PUBLIC_PAYSTACK_TEST } from '$env/static/public';
+	export let key: string;
 	interface Args {
 		email: string;
 		amount: number;
@@ -15,7 +15,7 @@
 	export const request_payment = ({ email, amount, metadata, currency }: Args) => {
 		PaystackPop.setup({
 			//TODO-window_type
-			key: PUBLIC_PAYSTACK_TEST ? PUBLIC_PAYSTACK_PK_TEST : PUBLIC_PAYSTACK_PK_LIVE,
+			key,
 			email,
 			metadata,
 			currency,
