@@ -12,6 +12,7 @@
 	export let searched = false,
 		text = '',
 		route: string,
+		id_route: string,
 		placeholder: string,
 		total: number = 0,
 		documents: SearchDocument[] = [],
@@ -64,7 +65,7 @@
 {#if searched}
 	{#if documents.length}
 		<SearchPagination
-			{route}
+			route={id_route}
 			{total}
 			on:update={({ detail }) => {
 				page_update(detail.page);
