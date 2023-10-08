@@ -33,7 +33,7 @@
 		searched = true;
 		loading = true;
 		try {
-			const r = await axios.post(`/${route}/search`, { text, page });
+			const r = await axios.post(route, { text, page });
 			({ total, documents, page } = r.data);
 			searched = true;
 		} catch (e: any) {
