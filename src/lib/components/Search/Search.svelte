@@ -9,7 +9,7 @@
 	import SearchPagination from './SearchPagination.svelte';
 
 	export let searched = false,
-		text = '',
+		q = '',
 		route: string,
 		id_route: string,
 		placeholder: string,
@@ -29,11 +29,11 @@
 
 	let search_input_ref: HTMLTextAreaElement;
 	const get = async (page: number) => {
-		if (!text) return;
+		if (!q) return;
 		searched = true;
 		loading = true;
 		try {
-			const r = await axios.post(route, { text, page });
+			const r = await axios.get(route, { params: { q, p: page } });
 			({ total, documents, page } = r.data);
 			searched = true;
 		} catch (e: any) {
@@ -51,7 +51,7 @@
 <OnEnter ctrl on:enter={() => get(page)} />
 
 <div class="input">
-	<TextArea rows={1} {placeholder} bind:ref={search_input_ref} bind:value={text} />
+	<TextArea rows={1} {placeholder} bind:ref={search_input_ref} bind:value={q} />
 	<Button size="field" on:click={() => get(page)} iconDescription="Search" icon={Search} />
 </div>
 
