@@ -1,6 +1,6 @@
 {
     "name": "sveltekit-carbon-utils",
-    "version": "0.2.39",
+    "version": "0.2.40",
     "license": "MIT",
     "scripts": {
         "dev": "vite dev",
