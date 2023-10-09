@@ -1,15 +1,23 @@
 <script lang="ts">
-	export let props: HeaderProps = {}
+	export let header_props: HeaderProps = {},
+		offline_indicator = true;
 	import { navigating } from '$app/stores';
 	import { isSideNavOpen } from '$lib/components/Nav/store.js';
 	import { InlineLoading, SkipToContent, Header, HeaderUtilities } from 'carbon-components-svelte';
+	import ConnectionSignalOff from 'carbon-icons-svelte/lib/ConnectionSignalOff.svelte';
+	import { Offline } from '@edge37/svelte-utils';
 	import type { HeaderProps } from 'carbon-components-svelte/types/UIShell/Header.svelte.js';
+
+	let offline: boolean;
 </script>
 
-<Header
-	{...props}
-	bind:isSideNavOpen={$isSideNavOpen}
->
+{#if offline_indicator}
+	<Offline bind:offline />
+{/if}
+<Header {...header_props} bind:isSideNavOpen={$isSideNavOpen}>
+	{#if offline_indicator && offline}
+		<ConnectionSignalOff />
+	{/if}
 	{#if $navigating}
 		<InlineLoading />
 	{/if}

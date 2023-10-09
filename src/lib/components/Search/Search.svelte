@@ -3,7 +3,7 @@
 	import Search from 'carbon-icons-svelte/lib/Search.svelte';
 	import type { SearchDocument } from '$lib/types.js';
 	import axios from 'axios';
-	import { notify } from 'sveltekit-carbon-utils';
+	import { notify } from '$lib/util/notify.js';
 	import OnEnter from '$lib/components/OnEnter.svelte';
 	import { onMount } from 'svelte';
 	import SearchPagination from './SearchPagination.svelte';

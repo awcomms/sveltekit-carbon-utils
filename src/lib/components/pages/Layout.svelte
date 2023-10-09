@@ -8,7 +8,7 @@
 	import SideNav from '$lib/components/Nav/SideNav.svelte';
 	import Notifications from '$lib/components/Notification/Notifications.svelte';
 	import { theme } from '$lib/util/theme_store.js';
-	import ConnectionSignalOff from 'carbon-icons-svelte/lib/ConnectionSignalOff.svelte'
+	import ConnectionSignalOff from 'carbon-icons-svelte/lib/ConnectionSignalOff.svelte';
 	import type { HeaderProps } from 'carbon-components-svelte/types/UIShell/Header.svelte.js';
 </script>
 
@@ -18,12 +18,9 @@
 	<Theme theme={$theme} />
 {/if}
 
-<Header props={header_props}>
+<Header {offline_indicator} {header_props}>
 	<slot name="header" />
 	<svelte:fragment slot="header-utilities">
-		{#if offline_indicator}
-			<HeaderGlobalAction icon={ConnectionSignalOff} />
-		{/if}
 		<slot name="header-utilities" />
 	</svelte:fragment>
 </Header>
