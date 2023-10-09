@@ -48,7 +48,7 @@
 	};
 </script>
 
-<OnEnter ctrl on:enter={() => get(page)} />
+<OnEnter on:enter={() => get(page)} />
 
 <div class="input">
 	<TextArea rows={1} {placeholder} bind:ref={search_input_ref} bind:value={q} />
